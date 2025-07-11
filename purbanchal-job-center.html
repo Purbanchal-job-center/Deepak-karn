@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purbanchal Job Center Pvt. Ltd. - श्रम आपूर्ति विशेषज्ञ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 2rem;
+            color: var(--secondary);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        .location i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-box {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-weight: 500;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Factories Section */
+        .factories {
+            padding: 80px 0;
+            background: #f0f5f9;
+        }
+        
+        .factories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .factory-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .factory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .factory-header {
+            background: var(--secondary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .factory-body {
+            padding: 25px;
+        }
+        
+        .factory-labour {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .contact-text {
+            font-size: 1.1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .submit-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-heading {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .about-content,
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">PJC</div>
+                <div>
+                    <div class="company-name">Purbanchal Job Center Pvt. Ltd.</div>
+                    <div class="tagline">श्रम आपूर्ति विशेषज्ञ - पूर्वांचल क्षेत्र</div>
+                </div>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#about">हाम्रो बारेमा</a>
+                <a href="#factories">कारखानाहरू</a>
+                <a href="#contact">सम्पर्क</a>
+                
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="ne">नेपाली</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="lang-content active" id="ne-hero">
+                <h1>पूर्वांचल क्षेत्रमा विश्वसनीय श्रम आपूर्ति</h1>
+                <p>हामी बिराटनगर, मोरङ, र हलेसी-३ का प्रमुख कारखानाहरूलाई गुणस्तरीय कामदारहरूको आपूर्ति गर्छौं। १०००+ कामदारहरूको हाम्रो नेटवर्क संग विश्वसनीय सेवा।</p>
+            </div>
+            <div class="lang-content" id="en-hero">
+                <h1>Reliable Labor Supply in Purvanchal Region</h1>
+                <p>We supply quality workers to major factories in Biratnagar, Morang, and Halesi-3. Trusted service with 1000+ worker network.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-content active" id="ne-about-title">हाम्रो संस्था बारे</span>
+                <span class="lang-content" id="en-about-title">About Our Organization</span>
+            </h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="lang-content active" id="ne-about">
+                        <h3>पूर्वांचल जोब सेन्टर प्रा. लि.</h3>
+                        <p>हामी पूर्वांचल क्षेत्रका विभिन्न कारखानाहरूलाई गुणस्तरीय कामदारहरूको आपूर्ति गर्ने अग्रणी संस्था हौं। बिराटनगर, मोरङ, र हलेसी-३ मा आधारित हाम्रो संस्थाले विभिन्न उद्योगहरूलाई विश्वसनीय श्रम सेवा प्रदान गर्दछ।</p>
+                        <p>हाम्रो उद्देश्य छ - कारखानाहरूलाई समयमै पर्याप्त संख्यामा कुशल कामदार उपलब्ध गराउनु र कामदारहरूलाई राम्रो रोजगारीको अवसर प्रदान गर्नु।</p>
+                        
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>स्थान: बिराटनगर, मोरङ, हलेसी-३, नेपाल</span>
+                        </div>
+                    </div>
+                    
+                    <div class="lang-content" id="en-about">
+                        <h3>Purbanchal Job Center Pvt. Ltd.</h3>
+                        <p>We are a leading organization supplying quality workers to various factories in the Purvanchal region. Based in Biratnagar, Morang, and Halesi-3, we provide reliable labor services to diverse industries.</p>
+                        <p>Our mission is to provide factories with skilled workers in a timely manner and offer good employment opportunities to workers.</p>
+                        
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Location: Biratnagar, Morang, Halesi-3, Nepal</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-box">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-text">
+                                <span class="lang-content active" id="ne-factories">कारखानाहरू</span>
+                                <span class="lang-content" id="en-factories">Factories</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-box">
+                            <div class="stat-number">1200+</div>
+                            <div class="stat-text">
+                                <span class="lang-content active" id="ne-workers">कामदारहरू</span>
+                                <span class="lang-content" id="en-workers">Workers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-box">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text">
+                                <span class="lang-content active" id="ne-trust">विश्वसनीयता</span>
+                                <span class="lang-content" id="en-trust">Reliability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <i class="fas fa-industry"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Factories Section -->
+    <section class="factories" id="factories">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-content active" id="ne-factories-title">हामी सेवा प्रदान गर्ने कारखानाहरू</span>
+                <span class="lang-content" id="en-factories-title">Factories We Serve</span>
+            </h2>
+            
+            <div class="factories-grid">
+                <!-- Factory 1 -->
+                <div class="factory-card">
+                    <div class="factory-header">
+                        <h3>Aarti Strips Pvt. Ltd.</h3>
+                    </div>
+                    <div class="factory-body">
+                        <p>
+                            <span class="lang-content active" id="ne-factory1">इस्पात उत्पादन कारखाना</span>
+                            <span class="lang-content" id="en-factory1">Steel production factory</span>
+                        </p>
+                        <div class="factory-labour">
+                            <span class="lang-content active" id="ne-labour1">३००+ कामदारहरू</span>
+                            <span class="lang-content" id="en-labour1">300+ Workers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Factory 2 -->
+                <div class="factory-card">
+                    <div class="factory-header">
+                        <h3>Asian Biscuit Confectionary Pvt. Ltd.</h3>
+                    </div>
+                    <div class="factory-body">
+                        <p>
+                            <span class="lang-content active" id="ne-factory2">बिस्कुट र मिठाई उत्पादन</span>
+                            <span class="lang-content" id="en-factory2">Biscuit and confectionery production</span>
+                        </p>
+                        <div class="factory-labour">
+                            <span class="lang-content active" id="ne-labour2">४००+ कामदारहरू</span>
+                            <span class="lang-content" id="en-labour2">400+ Workers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Factory 3 -->
+                <div class="factory-card">
+                    <div class="factory-header">
+                        <h3>Century Ply Industries</h3>
+                    </div>
+                    <div class="factory-body">
+                        <p>
+                            <span class="lang-content active" id="ne-factory3">प्लाईवुड उत्पादन</span>
+                            <span class="lang-content" id="en-factory3">Plywood manufacturing</span>
+                        </p>
+                        <div class="factory-labour">
+                            <span class="lang-content active" id="ne-labour3">१५०+ कामदारहरू</span>
+                            <span class="lang-content" id="en-labour3">150+ Workers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Factory 4 -->
+                <div class="factory-card">
+                    <div class="factory-header">
+                        <h3>Shivam Plastic</h3>
+                    </div>
+                    <div class="factory-body">
+                        <p>
+                            <span class="lang-content active" id="ne-factory4">प्लास्टिक उत्पादन</span>
+                            <span class="lang-content" id="en-factory4">Plastic products manufacturing</span>
+                        </p>
+                        <div class="factory-labour">
+                            <span class="lang-content active" id="ne-labour4">२००+ कामदारहरू</span>
+                            <span class="lang-content" id="en-labour4">200+ Workers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Factory 5 -->
+                <div class="factory-card">
+                    <div class="factory-header">
+                        <h3>Janako Polichem Carpet Factory</h3>
+                    </div>
+                    <div class="factory-body">
+                        <p>
+                            <span class="lang-content active" id="ne-factory5">कार्पेट उत्पादन</span>
+                            <span class="lang-content" id="en-factory5">Carpet manufacturing</span>
+                        </p>
+                        <div class="factory-labour">
+                            <span class="lang-content active" id="ne-labour5">१००+ कामदारहरू</span>
+                            <span class="lang-content" id="en-labour5">100+ Workers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-content active" id="ne-contact-title">हामीलाई सम्पर्क गर्नुहोस्</span>
+                <span class="lang-content" id="en-contact-title">Contact Us</span>
+            </h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">+९७७ ९८१०३०६२१२</div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">purwanchal.job555@gmail.com</div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="lang-content active" id="ne-address">बिराटनगर, मोरङ, हलेसी-३<br>नेपाल</span>
+                                <span class="lang-content" id="en-address">Biratnagar, Morang, Halesi-3<br>Nepal</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-viber"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>
+                                <span class="lang-content active" id="ne-name">नाम</span>
+                                <span class="lang-content" id="en-name">Name</span>
+                            </label>
+                            <input type="text" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <span class="lang-content active" id="ne-email">इमेल</span>
+                                <span class="lang-content" id="en-email">Email</span>
+                            </label>
+                            <input type="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <span class="lang-content active" id="ne-subject">विषय</span>
+                                <span class="lang-content" id="en-subject">Subject</span>
+                            </label>
+                            <input type="text" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <span class="lang-content active" id="ne-message">सन्देश</span>
+                                <span class="lang-content" id="en-message">Message</span>
+                            </label>
+                            <textarea required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="lang-content active" id="ne-submit">सन्देश पठाउनुहोस्</span>
+                            <span class="lang-content" id="en-submit">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-heading">
+                        <span class="lang-content active" id="ne-company">कम्पनी</span>
+                        <span class="lang-content" id="en-company">Company</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">
+                            <span class="lang-content active" id="ne-about-link">हाम्रो बारेमा</span>
+                            <span class="lang-content" id="en-about-link">About Us</span>
+                        </a></li>
+                        <li><a href="#factories">
+                            <span class="lang-content active" id="ne-services-link">सेवाहरू</span>
+                            <span class="lang-content" id="en-services-link">Services</span>
+                        </a></li>
+                        <li><a href="#contact">
+                            <span class="lang-content active" id="ne-contact-link">सम्पर्क</span>
+                            <span class="lang-content" id="en-contact-link">Contact</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">
+                        <span class="lang-content active" id="ne-factory-links">कारखानाहरू</span>
+                        <span class="lang-content" id="en-factory-links">Factories</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Aarti Strips Pvt. Ltd.</a></li>
+                        <li><a href="#">Asian Biscuit Confectionary</a></li>
+                        <li><a href="#">Century Ply Industries</a></li>
+                        <li><a href="#">Shivam Plastic</a></li>
+                        <li><a href="#">Janako Polichem Carpet</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">
+                        <span class="lang-content active" id="ne-contact-footer">सम्पर्क जानकारी</span>
+                        <span class="lang-content" id="en-contact-footer">Contact Info</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> बिराटनगर, मोरङ, हलेसी-३</li>
+                        <li><i class="fas fa-phone-alt"></i> +९७७ ९८१०३०६२१२</li>
+                        <li><i class="fas fa-envelope"></i> purwanchal.job555@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 Purbanchal Job Center Pvt. Ltd. 
+                <span class="lang-content active" id="ne-rights">सर्वाधिकार सुरक्षित</span>
+                <span class="lang-content" id="en-rights">All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Switching Functionality
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                
+                // Update active button
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Show selected language content
+                document.querySelectorAll('.lang-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                document.querySelectorAll(`.lang-content[id$="${lang}"]`).forEach(content => {
+                    content.classList.add('active');
+                });
+                
+                // Special handling for content that doesn't follow the id suffix pattern
+                const specialIds = {
+                    'ne': ['ne-hero', 'ne-about-title', 'ne-about', 'ne-factories', 'ne-workers', 'ne-trust', 
+                           'ne-factories-title', 'ne-factory1', 'ne-labour1', 'ne-factory2', 'ne-labour2',
+                           'ne-factory3', 'ne-labour3', 'ne-factory4', 'ne-labour4', 'ne-factory5', 'ne-labour5',
+                           'ne-contact-title', 'ne-address', 'ne-name', 'ne-email', 'ne-subject', 'ne-message',
+                           'ne-submit', 'ne-company', 'ne-about-link', 'ne-services-link', 'ne-contact-link',
+                           'ne-factory-links', 'ne-contact-footer', 'ne-rights'],
+                    'en': ['en-hero', 'en-about-title', 'en-about', 'en-factories', 'en-workers', 'en-trust',
+                           'en-factories-title', 'en-factory1', 'en-labour1', 'en-factory2', 'en-labour2',
+                           'en-factory3', 'en-labour3', 'en-factory4', 'en-labour4', 'en-factory5', 'en-labour5',
+                           'en-contact-title', 'en-address', 'en-name', 'en-email', 'en-subject', 'en-message',
+                           'en-submit', 'en-company', 'en-about-link', 'en-services-link', 'en-contact-link',
+                           'en-factory-links', 'en-contact-footer', 'en-rights']
+                };
+                
+                specialIds[lang].forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const lang = document.querySelector('.lang-btn.active').getAttribute('data-lang');
+            
+            if (lang === 'ne') {
+                alert('धन्यवाद! तपाईंको सन्देश पठाइयो। हामी चाँडै नै तपाईंसँग सम्पर्क गर्नेछौं।');
+            } else {
+                alert('Thank you! Your message has been sent. We will contact you soon.');
+            }
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>
